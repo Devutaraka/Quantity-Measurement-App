@@ -29,43 +29,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BookMyStayApp.executor": "Run",
-    "Application.PalindromeChecker.executor": "Run",
-    "Application.PalindromeCheckerApp.executor": "Run",
-    "Application.QuantityMeasurementApp.executor": "Run",
-    "Application.TrainConsistApp.executor": "Run",
-    "Application.UseCase11PalindromeCheckerApp.executor": "Run",
-    "Application.UseCase1HotelBookingApp.executor": "Run",
-    "Application.UseCase1PalindromeCheckerApp.executor": "Run",
-    "Application.UseCase2PalindromeCheckerApp.executor": "Run",
-    "Application.UseCase3PalindromeCheckerApp.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/user/OneDrive/Documents/RA2411028010046/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BookMyStayApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PalindromeChecker.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PalindromeCheckerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.QuantityMeasurementApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrainConsistApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UseCase11PalindromeCheckerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UseCase1HotelBookingApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UseCase1PalindromeCheckerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UseCase2PalindromeCheckerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UseCase3PalindromeCheckerApp.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/user/OneDrive/Documents/RA2411028010046/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BookMyStayApp">
     <configuration name="BookMyStayApp" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="BookMyStayApp" />
       <module name="RA2411028010046" />
