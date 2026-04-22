@@ -1,0 +1,4 @@
+INV:Single Room:2
+INV:Double Room:1
+BOOK:SingleRoom-1
+BOOK:DoubleRoom-2
