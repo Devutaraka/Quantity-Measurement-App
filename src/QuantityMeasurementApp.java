@@ -1,6 +1,6 @@
 public class QuantityMeasurementApp {
 
-    // 🔹 ENUM
+    // 🔹 ENUM (NOW HANDLES CONVERSION LOGIC)
     enum LengthUnit {
         FEET(1.0),
         INCHES(1.0 / 12.0),
@@ -13,12 +13,20 @@ public class QuantityMeasurementApp {
             this.factor = factor;
         }
 
+        // Convert any value to base (feet)
         public double toBase(double value) {
             return value * factor;
         }
 
+        // Convert base (feet) to target unit
         public double fromBase(double baseValue) {
             return baseValue / factor;
+        }
+
+        // 🔥 UC8: Direct conversion method (NEW DESIGN)
+        public double convert(double value, LengthUnit target) {
+            double base = this.toBase(value);
+            return target.fromBase(base);
         }
     }
 
@@ -41,24 +49,23 @@ public class QuantityMeasurementApp {
             this.unit = unit;
         }
 
-        private double toBase() {
-            return unit.toBase(value);
+        // 🔥 UC8: Conversion using ENUM method
+        public QuantityLength convertTo(LengthUnit target) {
+            double result = unit.convert(value, target);
+            return new QuantityLength(result, target);
         }
 
-        // 🔥 UC7 ADD WITH TARGET UNIT
-        public static QuantityLength add(QuantityLength q1, QuantityLength q2, LengthUnit targetUnit) {
+        // 🔥 UC8: Addition using ENUM conversion
+        public static QuantityLength add(QuantityLength q1, QuantityLength q2, LengthUnit target) {
 
-            if (q1 == null || q2 == null || targetUnit == null) {
+            if (q1 == null || q2 == null || target == null) {
                 throw new IllegalArgumentException("Invalid input");
             }
 
-            // Convert both to base (feet)
-            double sumBase = q1.toBase() + q2.toBase();
+            double v1 = q1.unit.convert(q1.value, target);
+            double v2 = q2.unit.convert(q2.value, target);
 
-            // Convert to TARGET unit
-            double result = targetUnit.fromBase(sumBase);
-
-            return new QuantityLength(result, targetUnit);
+            return new QuantityLength(v1 + v2, target);
         }
 
         @Override
@@ -67,7 +74,11 @@ public class QuantityMeasurementApp {
             if (obj == null || getClass() != obj.getClass()) return false;
 
             QuantityLength other = (QuantityLength) obj;
-            return Math.abs(this.toBase() - other.toBase()) < EPSILON;
+
+            double base1 = unit.toBase(value);
+            double base2 = other.unit.toBase(other.value);
+
+            return Math.abs(base1 - base2) < EPSILON;
         }
 
         @Override
@@ -79,20 +90,19 @@ public class QuantityMeasurementApp {
     // 🔹 MAIN
     public static void main(String[] args) {
 
+        QuantityLength q1 = new QuantityLength(1.0, LengthUnit.FEET);
+        QuantityLength q2 = new QuantityLength(12.0, LengthUnit.INCHES);
+
+        // Conversion
+        System.out.println(q1.convertTo(LengthUnit.INCHES));
+
+        // Addition using target
         System.out.println(
-                QuantityLength.add(
-                        new QuantityLength(1.0, LengthUnit.FEET),
-                        new QuantityLength(12.0, LengthUnit.INCHES),
-                        LengthUnit.INCHES
-                )
+                QuantityLength.add(q1, q2, LengthUnit.INCHES)
         );
 
         System.out.println(
-                QuantityLength.add(
-                        new QuantityLength(1.0, LengthUnit.FEET),
-                        new QuantityLength(12.0, LengthUnit.INCHES),
-                        LengthUnit.YARDS
-                )
+                QuantityLength.add(q1, q2, LengthUnit.YARDS)
         );
     }
-}   
+}
